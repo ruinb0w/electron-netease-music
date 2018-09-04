@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited{
+  color: black;
+}
+a:hover {
+  color: white;
+}
+
+main {
+  margin-bottom:50px;
+}
+
+.clear {
+  clear: both;
+}
+
+#topHeader {
+  background-color:#d84442;
+  height: 50px;
+}
+
+#topHeader li, #topHeader nav, #topHeader ul, form{
+  display: inline-block;
+}
+
+#topHeader li{
+  list-style-type: none;
+  line-height:50px;
+}
+
+nav a.active {
+  color: white;
+}
+
+form,
+.login {
+  float: right;
+  margin-right: 15px;
+  line-height: 50px;
+}
+
+.login-box {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  top: calc(50% - 150px);
+  left: calc(50% - 200px);
+  box-shadow: rgba(59, 59, 177, 0.18) 0px 0px 20px;
+  background-color: white;
+}
+
+.login-box form{
+  display: block;
+  float: none;
+  margin:15px auto;
+  width: 180px;
+}
+
+.login-box form h2{
+  font-weight: normal;
+  width: 100px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+.username,.password {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+input[value="切换为邮箱登录"], input[value="登录"]{
+  border-radius: 5px 5px;
+  border:none;
+  display: block;
+  width: 100px;
+  margin: 10px auto;
+}
+input[value="切换为邮箱登录"]:hover,
+input[value="登录"]:hover{
+  color: black;
+}
+
+input[value="切换为邮箱登录"]{
+  color:#e5c07b;
+  background-color:white;
+  font-size: 0.8em;
+}
+input[value="切换为邮箱登录"]:active {
+  color: lightblue;
+}
+
+input[value="登录"]{
+  color: white;
+  background-color: #16a085;
+  font-size: 1.2em;
+}
+
+input[value="登录"]:active {
+  color: lightblue;
+}
+
+.loginShadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.search, .search-btn {
+  border-radius: 5px 5px;
+  border: none;
+  height: 1.5em;
+}
+
+input[value="登录"], input[value="切换为邮箱登录"], .search:focus, .search-btn:focus {
+  outline:none;
+}
+
+.search {
+  text-indent: 1em;
+}
+
+.search-btn {
+  background-color: white;
+}
+
+.search-btn:active {
+  color:#d84442;
+}
+
+#hotSound .item {
+  float: left;
+  display: inline-block;
+  padding: 10px;
+  background-color: white;
+  margin: 15px;
+  font-size: 1.5em;
+  line-height: 50px;
+  text-align:center;
+  border-radius: 10px 10px;
+  box-shadow: rgba(59, 59, 177, 0.18) 0px 0px 20px;
+}
+
+#hotSound a:hover {
+  background-color:#d84442;
+}
+
+#player1 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
