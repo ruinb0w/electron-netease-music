@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="./styles/style.css" type="text/css" media="all" />
     <script src="./scripts/vue.js" charset="utf-8"></script>
     <script src="./scripts/vue-resource.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="./styles/meplayer.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./styles/meplayer.min.css" type="text/css" media="all" />
     <script src="./scripts/meplayer.js" charset="utf-8"></script>
   </head>
   <body>
     <header id="topHeader">
       <nav>
         <ul>
-          <li><a :class="tab === 'mySound' ? 'active':'' "href="#" @click="switchTab('mySound')">我的歌曲</a></li>
+          <li><a :class="tab === 'userSound' ? 'active':'' " href="#" @click="switchTab('userSound')">我的歌曲</a></li>
           <li><a :class="tab === 'dailySound' ? 'active':''" href="#" @click="switchTab('dailySound')">每日推荐</a></li>
           <li><a :class="tab === 'hotSound' ? 'active':''" href="#" @click="switchTab('hotSound')">热门歌单</a></li>
         </ul>
@@ -27,30 +27,42 @@
         <div class="login-box">
           <form>
             <h2>登录</h2>
-            <input class="username" type="text" placeholder="phone number"/>
-            <input class="password" type="password" placeholder="password"/>
-            <input type="button"/ value="登录">
+            <input v-model="user.account" class="username" type="text" placeholder="phone number"/>
+            <input v-model="user.passwd" class="password" type="password" placeholder="password"/>
+            <input type="button"/ value="登录" @click="login">
             <input type="button" value="切换为邮箱登录"/>
           </form>
         </div>
       </div>
     </header>
     <main id="main" >
-      <div id="mySound" v-if="tab === 'mySound'">
-        mySound 
-      </div>
-      <div id="dailySound" v-else-if="tab === 'dailySound'">
-        dailySound 
-      </div>
-      <div id="hotSound" v-else>
-        <a class="item" @click="selectMusicList(item.id)" v-for="item in hotPlayList" href="#" >
+      <div id="userSound" v-if="tab === 'userSound'">
+        <a @click="listSound(item.id, 'userSound')" class="item" v-for="item in userAlbumn" href="#" >
           {{item.name}}
         </a>
-        <div class="clear"></div>
+        <hr />
+        <a href="#" @click="playSound(item.id, item.name, item.ar.name, item.al.picUrl)" class="item" v-for="item in userList">
+          {{item.name}}
+        </a>
+      </div>
+      <div id="dailySound" v-else-if="tab === 'dailySound'">
+        <a href="#" @click="playSound(item.id, item.name, item.artists.name, item.album.picUrl)" class="item" v-for="item in dailyList">
+          {{item.name}}
+        </a>
+      </div>
+      <div id="hotSound" v-else>
+          <a @click="listSound(item.id, 'hotSound')" class="item" v-for="item in hotAlbumn" href="#" >
+            {{item.name}}
+          </a>
+          <hr />
+          <a href="#" @click="playSound(item.id, item.name, item.ar.name, item.al.picUrl)" class="item" v-for="item in hotList">
+            {{item.name}}
+          </a>
       </div>
     </main>
     <div class="container">
-        <div class="music"></div>
+        <div class="music">
+        </div>
     </div>
     <script src="./scripts/script.js" charset="utf-8"></script>
   </body>

@@ -14,8 +14,13 @@ a:hover {
   color: white;
 }
 
+hr {
+  width: 80%;
+  margin: 10px auto;
+}
+
 main {
-  margin-bottom:50px;
+  margin-bottom: 120px;
 }
 
 .clear {
@@ -138,14 +143,14 @@ input[value="登录"], input[value="切换为邮箱登录"], .search:focus, .sea
   color:#d84442;
 }
 
-#hotSound .item {
-  float: left;
+main .item {
+  /* float: left; */
   display: inline-block;
   padding: 10px;
   background-color: white;
-  margin: 15px;
-  font-size: 1.5em;
-  line-height: 50px;
+  margin: 10px;
+  font-size: 1.2em;
+  line-height: 30px;
   text-align:center;
   border-radius: 10px 10px;
   box-shadow: rgba(59, 59, 177, 0.18) 0px 0px 20px;
@@ -155,14 +160,9 @@ input[value="登录"], input[value="切换为邮箱登录"], .search:focus, .sea
   background-color:#d84442;
 }
 
-#player1 {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
 .container {
   position: fixed;
   bottom: 0;
   width: 100%;
+  background-color: white;
 }

@@ -122,13 +122,13 @@
 	  }
 
 	  // 重定义meplayer
-	  root.mePlayer = {
-	    play: play,
-	    pause: pause,
-	    toggleTheme: toggleTheme
-
-	    // 给播放器绑定各种事件
-	  };function eventInit() {
+		// root.mePlayer = {
+			// play: play,
+			// pause: pause,
+			// toggleTheme: toggleTheme
+    // };
+    // 给播放器绑定各种事件
+    function eventInit() {
 	    audio.addEventListener('ended', handleAudioEnd);
 	    audio.addEventListener('canplaythrough', handleCanPlayThrough);
 	    audio.addEventListener('durationchange', handleDurationChange);

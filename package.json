@@ -1,22 +1,29 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "electron-netease-music",
+  "version": "0.0.1",
+  "description": "an electron netease music client",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/ruinb0w/electron-netease-music",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "music",
+    "netease"
   ],
-  "author": "GitHub",
+  "author": "ruinb0w",
   "license": "CC0-1.0",
+  "dependencies": {
+    "apicache": "^1.2.1",
+    "big-integer": "^1.6.28",
+    "express": "^4.16.3",
+    "request": "^2.85.0"
+  },
   "devDependencies": {
-    "electron": "^2.0.0"
+    "electron": "^2.0.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^5.1.1",
+    "power-assert": "^1.5.0"
   }
 }

@@ -1,3 +1,18 @@
+// start api server
+const { exec } = require('child_process');
+let childp = exec('node ./api/app.js', (err, stdout, stderr) => {
+  if (err) {
+    // node couldn't execute the command
+    return;
+  }
+
+  // the *entire* stdout and stderr (buffered)
+  console.log(`stdout: ${stdout}`);
+  console.log(`stderr: ${stderr}`);
+});
+
+console.log(childp);
+
 const {app, BrowserWindow} = require('electron')
 
 let mainWindow
@@ -23,6 +38,7 @@ function createWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
+    childp.kill("SIGHUP")
     mainWindow = null
   })
 }
